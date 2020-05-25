@@ -1,36 +1,140 @@
-.container {
-  display: flex;
+body {
+    max-width: 450px;
+    height: 100vh;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: calc(16px + (22 - 16) * ((100vw - 300px) / (1600 - 300)));
+    font-weight: 300;
+    background: linear-gradient(90deg, #fbfae8 15px, transparent 1%) center,
+			linear-gradient(#fbfae8 15px, transparent 1%) center, #ccc;
+		background-size: 17px 17px;
+    
 }
 
 
+.main {
+
+    margin: auto;
+    padding-left: 50px;
+    padding-bottom: 30px;
+    
+    
+}
+
+.container {
+    display: flex;
+    margin-top: 15px;
+    clear: both;
+}
+
+
+.annoying {
+    display: flex;
+}
 .grid {
-  width: 200px;
-  height: 400px;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: yellow;
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #A4D984;
+    margin-top: 20px;
+    box-shadow:
+    0 4.8px 4.2px rgba(0, 0, 0, 0.034),
+    0 8.7px 7.3px rgba(0, 0, 0, 0.048),
+    0 14.5px 12px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
 }
 
 .grid div {
-  height: 20px;
-  width: 20px;
+    height: 20px;
+    width: 20px;
+    
 }
 
-.tetromino {
-  background-color: blue;
-}
 
+.tetrimino {
+    -webkit-box-shadow: inset 0px 0px 1px 3px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow:    inset 0px 0px 1px 3px rgba(0, 0, 0, 0.21);
+    box-shadow:         inset 0px 0px 1px 3px rgba(0, 0, 0, 0.21);
+  background-color:#F26386;
+}
 
 .mini-grid {
-  margin-left: 50px;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: yellow;
+    height:80px;
+    width: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-top: 20px;
+    box-shadow:
+    0 4.8px 4.2px rgba(0, 0, 0, 0.034),
+    0 8.7px 7.3px rgba(0, 0, 0, 0.048),
+    0 14.5px 12px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+
 }
 
 .mini-grid div {
-  height: 20px;
-  width: 20px;
+    height: 20px;
+    width: 20px;
+    background-color: #A4D984;
+  
+
+
+}
+.highlight {
+    background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #F588AF 50%);
+    
+  }
+
+
+.multi-button button {
+    background: white;
+    border: 0.2em solid black;
+    cursor: pointer;
+    letter-spacing: 0.125em;
+    padding: 0.5em 0.75em;
+    margin-right: 30px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+
+.multi-button #start-button:hover:after {
+    border: 0.2em dashed black;
+    bottom: -0.600em;
+    left: 0.09em;
+    right: -0.600em;
+    top: 0.09em;
+    z-index: -2;
+    content: '';
+    position: absolute;
+    transition: all 0.125s ease-in-out;
+}
+
+.multi-button #restart:hover:after {
+    background: white;
+    border: 0.2em dashed black;
+    left: -0.6em;
+    top: -0.6em;
+    right: -0.6em;
+    bottom: -0.6em;
+    z-index: -1;
+    content: '';
+    position: absolute;
+    transition: all 0.175s ease-in-out;
+} 
+
+
+
+#start-button {
+    float:left;
+}
+
+#restart {
+    float:right;
 }
