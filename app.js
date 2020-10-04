@@ -191,12 +191,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // rotate the terimino
 
     function rotate() {
-        undraw()
-        currentRotation++
-        if (currentRotation === current.length) { // once you get to rotation 4, go back to 0
-            currentRotation = 0
+
+        var nextRotation = currentRotation+ 1 ;
+        if (nextRotation === current.length){ // once you get to rotation 4, go back to 0
+            nextRotation = 0
         }
-        current = theTetriminos[random][currentRotation]
+        var next = theTetriminos[random][nextRotation];
+
+        let isNewALeftEdge = next.some(index => (currentPosition + index) % width === 0)
+        let isNewARightEdge = next.some(index => (currentPosition + index) % width === width - 1)
+
+        if (isNewALeftEdge && isNewARightEdge){
+            return false;
+        }
+
+        // now validation on the size has passed, we want to override the current with the nextObj
+        undraw()
+        current = next;
+        currentRotation = nextRotation;
         draw()
 
     }
